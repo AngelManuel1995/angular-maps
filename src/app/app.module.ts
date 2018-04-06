@@ -6,6 +6,9 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 
+//Services
+import { MapsService } from './services/maps.service';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { AppComponent } from './app.component';
       apiKey:'AIzaSyCxxrOrikiWSUeJGjyM65PREGvZB0O4eIw'
     })
   ],
-  providers: [],
+  providers: [
+    MapsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
