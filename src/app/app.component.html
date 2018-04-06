@@ -1,6 +1,25 @@
-<agm-map 
-        [latitude]="lat" 
-        [longitude]="lng"
-        [zoom]="zoom">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Marcadores</h2>
+    </div>
+    <div class="col-md-8">
+      <agm-map 
+              [latitude]="lat" 
+              [longitude]="lng"
+              [zoom]="zoom"
+              (circleClick)="ejemplo($evento)">
+        <agm-marker [latitude]="lat" [longitude]="lng">
+          <agm-info-window>
+            <strong>
+              Cañasgordas
+            </strong>
+            <p>
+              Municipio para propios y visitantes;
+            </p>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>
