@@ -1,12 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core' 
+import { CommonModule } from '@angular/common' 
 
 //Angular Material
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatCardModule } from '@angular/material/card';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar' 
+import { MatButtonModule } from '@angular/material/button' 
+import { MatProgressBarModule } from '@angular/material/progress-bar' 
+import { MatCardModule } from '@angular/material/card' 
+import { MatSnackBarModule } from '@angular/material/snack-bar' 
+import { MatDialogModule } from '@angular/material/dialog' 
+import { MatInputModule } from '@angular/material/input'
+
+
 
 @NgModule({
 	imports:[
@@ -15,14 +19,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 		MatButtonModule,
 		MatProgressBarModule,
 		MatCardModule,
-		MatSnackBarModule
+		MatSnackBarModule,
+		MatDialogModule,
+		MatInputModule
 	],
 	exports:[
 		MatToolbarModule,
 		MatButtonModule,
 		MatProgressBarModule,
 		MatCardModule,
-		MatSnackBarModule
+		MatSnackBarModule,
+		MatDialogModule,
+		MatInputModule		
 	],
 	declarations:[]
 })

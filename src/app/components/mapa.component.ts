@@ -1,6 +1,8 @@
 import { Component } from '@angular/core' 
 import { Marker } from '../classes/marcador.class' 
+import { MapaEditarComponent } from './mapa-editar.component'
 import { MatSnackBar } from '@angular/material'
+import { MatDialog, MatDialogRef } from '@angular/material'
 @Component({
 	selector:'app-mapa',
 	templateUrl:'./mapa.component.html'
@@ -14,7 +16,7 @@ export class MapaComponent{
 	lng:number = -76.02611 
 	zoom:number = 16 
 
-	constructor(private snackBar:MatSnackBar){
+	constructor(private snackBar:MatSnackBar, public dialog:MatDialog){
 		let marker = new Marker(6.750597,-76.02611) 
 		this.markers.push(marker) 
 		this.getLocalStorageData()
@@ -44,6 +46,23 @@ export class MapaComponent{
 		this.markers.splice(i,1)
 		this.updateLocalStorageData()
 		this.snackBar.open('Marcador eliminado', 'Cerrar', {duration:1500})				
+	}
+
+	editMarker( marker ){
+		const dialogRef = this.dialog.open(MapaEditarComponent, {
+      width: '250px',
+      data: { title:marker.title, desc:marker.desc }
+		});
+		dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if(!result){
+				return console.log('No hay data')
+			}
+			marker.title = result.title
+			marker.desc = result.desc
+			this.updateLocalStorageData()
+			this.snackBar.open('Marcador actualizado', 'Cerrar', {duration:1500})	
+    });
 	}
 
 }

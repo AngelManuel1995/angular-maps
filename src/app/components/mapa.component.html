@@ -13,7 +13,7 @@
 						{{marker.desc}}
 					</p>
 					<div style="margin:auto">
-						<button mat-raised-button color="primary" >Editar</button>
+						<button (click)="editMarker(marker)" mat-raised-button color="primary" >Editar</button>
 						<button (click)="deleteMarker(i)" mat-raised-button color="warn" >Borrar</button>
 					</div>
 				</agm-info-window>
