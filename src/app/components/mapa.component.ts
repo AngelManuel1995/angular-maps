@@ -21,6 +21,17 @@ export class MapaComponent{
 		this.markers.push(marker) 
 		this.getLocalStorageData()
 
+		foods:[] = [
+			{value: 'steak-0', viewValue: 'Steak'},
+			{value: 'pizza-1', viewValue: 'Pizza'},
+			{value: 'tacos-2', viewValue: 'Tacos'}
+		  ];
+
+		drinks:[] = [
+			{value: 'steak-0', viewValue: 'Steak'},
+			{value: 'pizza-1', viewValue: 'Pizzgfhfa'},
+			{value: 'tacos-2', viewValue: 'Tacos'}
+		  ];
 	}
 
 	addMarker( event ){
@@ -49,20 +60,25 @@ export class MapaComponent{
 	}
 
 	editMarker( marker ){
-		const dialogRef = this.dialog.open(MapaEditarComponent, {
-      width: '250px',
-      data: { title:marker.title, desc:marker.desc }
+	 	const dialogRef = this.dialog.open(MapaEditarComponent, {
+        	width: '250px',
+      		data: { title:marker.title, desc:marker.desc }
 		});
+
 		dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      if(!result){
+
+			console.log('The dialog was closed');
+		  
+			if(!result){
 				return console.log('No hay data')
 			}
+
 			marker.title = result.title
 			marker.desc = result.desc
 			this.updateLocalStorageData()
 			this.snackBar.open('Marcador actualizado', 'Cerrar', {duration:1500})	
-    });
+
+    	});
 	}
 
 }

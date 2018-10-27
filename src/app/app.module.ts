@@ -12,10 +12,11 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component'  
 import { MapaComponent } from './components/mapa.component'  
 import { MapaEditarComponent } from './components/mapa-editar.component'
-
+import { DatepickerOverviewExample } from './components/datepicker-overview-example'
 
 //Services
 import { MapsService } from './services/maps.service'  
+import { SelectOverviewExample } from './components/select-overview-example';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { MapsService } from './services/maps.service'
   declarations: [
     AppComponent,
     MapaComponent,
-    MapaEditarComponent
+    MapaEditarComponent,
+    DatepickerOverviewExample,
+    SelectOverviewExample
   ],
   imports: [
     BrowserModule,

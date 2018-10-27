@@ -9,8 +9,9 @@ import { MatCardModule } from '@angular/material/card'
 import { MatSnackBarModule } from '@angular/material/snack-bar' 
 import { MatDialogModule } from '@angular/material/dialog' 
 import { MatInputModule } from '@angular/material/input'
-
-
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material'
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
 	imports:[
@@ -21,7 +22,10 @@ import { MatInputModule } from '@angular/material/input'
 		MatCardModule,
 		MatSnackBarModule,
 		MatDialogModule,
-		MatInputModule
+		MatInputModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
+		MatSelectModule,
 	],
 	exports:[
 		MatToolbarModule,
@@ -30,7 +34,9 @@ import { MatInputModule } from '@angular/material/input'
 		MatCardModule,
 		MatSnackBarModule,
 		MatDialogModule,
-		MatInputModule		
+		MatInputModule,
+		MatDatepickerModule,
+		MatSelectModule,
 	],
 	declarations:[]
 })

@@ -11,15 +11,17 @@ export class MapaEditarComponent{
 		
 	forma:FormGroup 
 
-	constructor( private _formBuilder:FormBuilder,
-    public dialogRef: MatDialogRef<MapaEditarComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { 
-			// data : información que enviamos desde el mapa.component
-			this.forma = _formBuilder.group({
-				'title':data.title,
-				'desc':data.desc
-			})
-		}
+	constructor( private _formBuilder:FormBuilder, public dialogRef: MatDialogRef<MapaEditarComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { 
+		// data : información que enviamos desde el mapa.component
+
+		this.forma = _formBuilder.group({
+			'title':data.title,
+			'desc':data.desc
+		})
+
+	}
+
+
 	saveChanges(){
 		this.dialogRef.close(this.forma.value) 
 	}

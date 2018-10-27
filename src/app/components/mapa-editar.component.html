@@ -1,10 +1,10 @@
 <form [formGroup]="forma" >
 	<mat-form-field>
-			<input matInput placeholder="Título" formControlName="title" >
+		<input matInput placeholder="Título" formControlName="title" >
 	</mat-form-field>
 
 	<mat-form-field>
-			<textarea rows="3" matInput placeholder="Descripción"  formControlName="desc"></textarea>
+		<textarea rows="3" matInput placeholder="Descripción"  formControlName="desc"></textarea>
 	</mat-form-field>
 
 	<button type="button" (click)="saveChanges()" mat-raised-button color="primary" >Aceptar</button>
